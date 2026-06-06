@@ -1,0 +1,240 @@
+/* ============================================================
+   J. KANE — PORTFOLIO  |  style.css (Light Theme)
+   ============================================================ */
+
+:root {
+  --bg: #ebebeb; /* Light grey background */
+  --card-bg: #ffffff;
+  --text-main: #111111;
+  --text-mut: #888888;
+  --pink: #ff4fc8; /* Pink accent */
+  --radius: 18px;
+  --radius-pill: 50px;
+  --font: 'Manrope', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  font-family: var(--font);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.portfolio-container {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Base Card Style */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+/* ---------- Top Nav ---------- */
+.nav-card {
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+}
+
+.logo {
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-pills {
+  display: flex;
+  gap: 4px;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-main);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.pill.active {
+  background: var(--pink);
+}
+
+.pill:active {
+  transform: scale(0.96);
+}
+
+.pill svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ---------- Profile Card ---------- */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-top {
+  display: flex;
+  align-items: flex-start;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.profile-meta {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.en { color: var(--text-main); }
+.cy { color: var(--text-mut); margin-left: 4px; }
+.time { color: var(--text-main); }
+
+.profile-bio {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Brands Card ---------- */
+.brands-card {
+  padding: 18px 0;
+  overflow: hidden;
+}
+
+.brands-track {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+
+.brands-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: max-content;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.brand svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------- Projects Wrapper ---------- */
+.projects-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-card {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  align-items: flex-start;
+}
+
+.project-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-info h3 {
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.project-info p {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-mut);
+}
+
+/* ---------- Footer Card ---------- */
+.footer-card {
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 24px 20px;
+}
+
+.footer-card p {
+  font-size: 13px;
+  color: var(--text-mut);
+  font-weight: 500;
+}
+
+/* Mobile optimizations */
+@media (max-width: 400px) {
+  body { padding: 20px 12px; }
+  .profile-img { width: 85px; height: 85px; }
+  .profile-bio { font-size: 13.5px; }
+  .project-img { width: 70px; height: 70px; }
+  .pill { padding: 8px 10px; font-size: 12px; }
+}
