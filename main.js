@@ -23,8 +23,9 @@ function startTicker() {
   const inner = document.getElementById('brandsInner');
   if (!inner) return;
 
-  // Since we duplicated the items in HTML, scroll exactly half the width
-  const fullW = inner.scrollWidth / 2;
+  // Wait for images to load if they haven't already
+  // Add 24px to account for the missing gap at the very end of the flex container
+  const fullW = (inner.scrollWidth + 24) / 2;
 
   gsap.to(inner, {
     x: `-=${fullW}`,
@@ -37,6 +38,6 @@ function startTicker() {
   });
 }
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   startTicker();
 });
