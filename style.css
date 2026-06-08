@@ -181,44 +181,110 @@ body {
   display: block;
 }
 
-/* ---------- Projects Wrapper ---------- */
-.projects-wrapper {
+/* ---------- Works Header ---------- */
+.works-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 4px 12px 4px;
+}
+
+.works-header h2 {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.works-link {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-main);
+  text-decoration: none;
+  background: var(--card-bg);
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: transform 0.1s;
+}
+
+.works-link:active {
+  transform: scale(0.96);
+}
+
+/* ---------- Projects Grid ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
 .project-card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
   display: flex;
-  gap: 16px;
-  padding: 16px;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: var(--card-bg);
+  cursor: pointer;
 }
 
-.project-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 12px;
+.project-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  flex-shrink: 0;
+  z-index: 1;
+  transition: transform 0.4s ease;
 }
 
-.project-info {
+.project-card:hover img {
+  transform: scale(1.04);
+}
+
+.project-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 16px 14px 14px 14px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
   display: flex;
   flex-direction: column;
   gap: 8px;
+  height: 100%;
+  justify-content: flex-end;
+  pointer-events: none;
 }
 
-.project-info h3 {
+.project-title {
+  color: #fff;
   font-size: 14.5px;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 
-.project-info p {
-  font-size: 12px;
-  line-height: 1.45;
-  color: var(--text-mut);
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-tag {
+  color: #fff;
+  font-size: 9.5px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  white-space: nowrap;
 }
 
 /* ---------- Footer Card ---------- */
