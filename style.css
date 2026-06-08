@@ -233,7 +233,8 @@ body {
   cursor: pointer;
 }
 
-.project-card img {
+.project-card img,
+.project-card video {
   position: absolute;
   top: 0;
   left: 0;
@@ -244,7 +245,8 @@ body {
   transition: transform 0.4s ease;
 }
 
-.project-card:hover img {
+.project-card:hover img,
+.project-card:hover video {
   transform: scale(1.04);
 }
 
